@@ -11,14 +11,18 @@ function Square(props) {
 }
 
 class Board extends React.Component {
-    renderSquare(x, y) {
+    renderCell(r, c) {
         return (
             <Square
-                key={'sq (' + x + ', ' + y + ')'}
-                value={this.props.squares[i]}
-                onClick={() => this.props.onClick(i)}
+                key={'cell (' + r + ', ' + c + ')'}
+                value={this.props.matrix[r][c]}
+                onClick={() => this.props.onClick(r, c)}
             />
         );
+    }
+
+    renderRow(r) {
+        return <div className="board-row">{array}</div>;
     }
 
     render() {
